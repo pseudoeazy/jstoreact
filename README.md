@@ -1,8 +1,8 @@
 ## MealStore
 
 front-end of an e-commerce system which allows users to filter products by category and add items to their shopping cart. It is part of a tutorial posted on medium.
-Open [Medium](http://localhost:3000).
-Open [Live URL](http://localhost:3000).
+Open [Medium](https://medium.com/@pseudoeazy/from-js-to-react-3663bd1ed3c5).
+Open [Live URL](https://pseudoeazy.github.io/jstoreact/)
 
 ## Setup The tutorial Project Locally
 

@@ -1,0 +1,349 @@
+/**  css reset **/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*general style*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*header*/
+.header,
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #191a1b;
+  color: #fff;
+}
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  height: 100px;
+}
+
+.header nav {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+.header ul.menus {
+  list-style-type: none;
+  display: flex;
+}
+.header ul.menus li {
+  padding: 0.4em;
+}
+.header ul.menus li:last-child {
+  background-color: blue;
+}
+span.total-items {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+span.total-items::before {
+  content: url("./images/cart-icon.png");
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+/*main-content*/
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  margin-top: 100px;
+}
+
+/**store-section **/
+.store-section {
+  width: 960px;
+  display: flex;
+}
+.categories nav {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.categories nav .category {
+  width: 200px;
+  padding: 10px;
+  border-radius: 0;
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+.categories nav .category:nth-child(2) {
+  border-top: none;
+  border-bottom: none;
+}
+.categories nav .category:last-of-type {
+  border-bottom: 1px solid black;
+  border-top: none;
+}
+/*.shop-items */
+div.shop-items {
+  width: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  transition: all 1s ease-in;
+}
+.reverse-shop-items {
+  flex-direction: row-reverse;
+}
+div.product {
+  border: 1px solid black;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+div.product:last-of-type {
+  margin-right: 0;
+}
+div.product:hover {
+  transform: scale(0.9);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+@keyframes sort-product {
+  from {
+    transform: translate(0px, 200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+.sort-product {
+  animation: 1s sort-product;
+}
+.product-img span {
+  font-size: 100px;
+}
+.product-img [role="img"] {
+  cursor: pointer;
+  filter: drop-shadow(3px 1px 4px #a044dd);
+}
+.product-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.product-content button {
+  padding: 4px;
+  margin: 4px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.product-name,
+.product-price {
+  padding: 0.5em;
+}
+/*cart-summary*/
+.cart-summary {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  transform: translate(100vw, 0);
+  width: 100vw;
+  min-height: 300vh;
+  background-color: #f0f5f6;
+  transition: all 0.5s ease-in-out;
+}
+.cart-summary-display {
+  position: absolute;
+  transform: translate(0vw, 0);
+}
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+.summary-header a {
+  display: block;
+  text-decoration: none;
+  color: #191a1b;
+  font-size: 20px;
+}
+.summary-total-items {
+  font-weight: bold;
+  font-size: 20px;
+}
+.summary-total-items::before {
+  content: "🛍️";
+  margin-right: 4px;
+}
+/*summary-content-container*/
+.summary-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  margin: 2em 4em;
+}
+
+.summary-content [role="img"] {
+  cursor: pointer;
+  font-size: 100px;
+  filter: drop-shadow(3px 1px 4px #a044dd);
+}
+.summary-content {
+  position: relative;
+  width: 960px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em;
+  background-color: #fff;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+}
+.item-name {
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  width: 200px;
+}
+.first-section,
+.second-section {
+  margin: 0.5em;
+}
+.first-section {
+  position: relative;
+}
+.update-quantity {
+  width: 124px;
+  display: flex;
+  padding: 2px;
+  margin-top: 0.4em;
+  background-color: #fdfefe;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+.quantity {
+  width: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+.update-button {
+  width: 40px;
+  padding: 4px;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.cart-empty {
+  font-size: 20px;
+}
+/*modal-section*/
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.show-modal {
+  display: block;
+}
+.modal-contentww {
+  border: 1px solid red;
+}
+.modal-content {
+  position: relative;
+  top: 20%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0.5em;
+  border: 1px solid #888;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+@keyframes animatetop {
+  from {
+    top: -20%;
+    opacity: 0;
+  }
+
+  to {
+    top: 20%;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2em;
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*product inside modal box*/
+.modal-info {
+  display: flex;
+  margin-top: 2em;
+}
+.store-image,
+.store-info {
+  padding: 10px;
+}
+.store-image {
+  flex: 1;
+  font-size: 6em;
+  border: 1px solid #999;
+  border-right: none;
+}
+
+table.store-info {
+  border-collapse: collapse;
+  flex: 2;
+}
+.store-info td {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+  letter-spacing: 2px;
+}
+.store-info td:last-child {
+  line-height: 18px;
+}
